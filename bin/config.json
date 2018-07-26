@@ -1,0 +1,7 @@
+{
+  "title": "My Rest API website",
+  "ports": {
+    "http": 8080,
+    "https": 8081
+  }
+}
