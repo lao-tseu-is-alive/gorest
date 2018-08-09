@@ -5,7 +5,7 @@ import (
 	"log"
 )
 const (
-	HelloWorldString = "Hello from Golang fasthttp API TEST\n"
+	HelloWorldString = "Hello from Golang API TEST\n"
 	adr = "localhost:8080"
 )
 var (
@@ -26,7 +26,7 @@ func main() {
 func mainHandler(ctx *fasthttp.RequestCtx)  {
 	path := ctx.Path()
 	switch string(path) {
-	case "/":
+	case "/plaintext":
 		ctx.SetContentType("text/plain")
 		ctx.Write(HelloWorldBytes)
 	default:

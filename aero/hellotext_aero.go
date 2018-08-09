@@ -3,11 +3,10 @@ package main
 import "github.com/aerogo/aero"
 
 func main() {
-	const HelloWorldString = "Hello from Golang Aero API TEST\n"
-
+	const HelloWorldString = "Hello from Golang API TEST\n"
 	app := aero.New()
 
-	app.Get("/", func(context *aero.Context) string {
+	app.Get("/plaintext", func(context *aero.Context) string {
 		return context.Text(HelloWorldString)
 	})
 
