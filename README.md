@@ -1,5 +1,10 @@
 # gorest
-just testing various rest api framework, first with a simple hello world
+just experimenting with various rest api framework performance
+on my own servers
+
+inspired by the impressive work done by TechEmpower and contributors on the
+[Web Framework Benchmarks](http://www.techempower.com/benchmarks/)
+
 
 ## Hello World JSON Response
 ### Results on my MacBook Air

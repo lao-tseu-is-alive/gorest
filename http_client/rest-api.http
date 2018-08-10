@@ -1,0 +1,22 @@
+GET http://localhost:8080/plaintext
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+
+
+GET http://localhost:8080/dbs
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/dbs?queries=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-08-10T082350.200.json
+
+###
+

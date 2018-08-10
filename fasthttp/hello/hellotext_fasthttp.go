@@ -1,4 +1,4 @@
-package main
+package hello
 
 import (
 	"github.com/valyala/fasthttp"
