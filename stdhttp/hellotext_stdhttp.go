@@ -1,13 +1,13 @@
 package main
 
 import (
-	"net/http"
 	"log"
+	"net/http"
 )
 
 const (
 	HelloWorldString = "Hello from Golang API TEST\n"
-	adr = "localhost:8080"
+	adr              = "localhost:8080"
 )
 
 func main() {

@@ -9,8 +9,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/valyala/fasthttp"
 	"github.com/lao-tseu-is-alive/gorest/fasthttp/templates"
+	"github.com/valyala/fasthttp"
 )
 
 const worldRowCount = 10000

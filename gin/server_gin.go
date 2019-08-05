@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-		"math/rand"
+	"math/rand"
 	"runtime"
 	//"database/sql"
 	"fmt"
@@ -22,8 +22,9 @@ var (
 	worldStatement   *pgx.PreparedStatement
 	fortuneStatement *pgx.PreparedStatement
 	updateStatement  *pgx.PreparedStatement
-	db *pgx.ConnPool
+	db               *pgx.ConnPool
 )
+
 const (
 	worldSelect        = "SELECT id, randomNumber FROM World WHERE id = ?"
 	worldUpdate        = "UPDATE World SET randomNumber = ? WHERE id = ?"
@@ -51,14 +52,12 @@ type ByMessage struct{ Fortunes }
 
 func (s ByMessage) Less(i, j int) bool { return s.Fortunes[i].Message < s.Fortunes[j].Message }
 
-
-
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 
 	var err error
 	maxConnectionCount := runtime.NumCPU() * 4
-	if db, err = initDatabase("localhost",  5432,
+	if db, err = initDatabase("localhost", 5432,
 		"benchmarkdbuser",
 		"benchmarkdbpass",
 		"benchmark", maxConnectionCount); err != nil {
@@ -97,7 +96,6 @@ func json(c *gin.Context) {
 	c.JSON(200, gin.H{"message": "Hello, World!"})
 }
 
-
 /// Test 2: Single database query
 
 func dbHandler(c *gin.Context) {
@@ -112,8 +110,6 @@ func dbHandler(c *gin.Context) {
 
 	c.JSON(200, &world)
 }
-
-
 
 /// Test 3: Multiple database queries
 func dbs(c *gin.Context) {
@@ -131,6 +127,7 @@ func dbs(c *gin.Context) {
 	}
 	c.JSON(200, &worlds)
 }
+
 /*
 /// Test 4: Fortunes
 func fortunes(c *gin.Context) {
@@ -178,7 +175,6 @@ func update(c *gin.Context) {
 func plaintext(c *gin.Context) {
 	c.String(200, "Hello, World!")
 }
-
 
 /*
 func init() {

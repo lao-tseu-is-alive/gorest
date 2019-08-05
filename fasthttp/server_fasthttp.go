@@ -17,7 +17,7 @@ var (
 	worldSelectStmt   *pgx.PreparedStatement
 	worldUpdateStmt   *pgx.PreparedStatement
 	fortuneSelectStmt *pgx.PreparedStatement
-	db *pgx.ConnPool
+	db                *pgx.ConnPool
 )
 
 func main() {
