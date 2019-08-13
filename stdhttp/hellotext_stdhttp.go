@@ -7,7 +7,7 @@ import (
 
 const (
 	HelloWorldString = "Hello from Golang API TEST\n"
-	adr              = "localhost:8080"
+	adr              = ":8080"
 )
 
 func main() {
@@ -15,8 +15,9 @@ func main() {
 		HelloWorldBytes = []byte(HelloWorldString)
 	)
 	http.HandleFunc("/plaintext", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Header().Set("Server", "go")
-		w.Header().Set("Content-Type", "text/plain")
+		w.WriteHeader(http.StatusOK)
 		w.Write(HelloWorldBytes)
 	})
 

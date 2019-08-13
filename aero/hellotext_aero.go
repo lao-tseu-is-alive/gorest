@@ -6,8 +6,8 @@ func main() {
 	const HelloWorldString = "Hello from Golang API TEST\n"
 	app := aero.New()
 
-	app.Get("/plaintext", func(context *aero.Context) string {
-		return context.Text(HelloWorldString)
+	app.Get("/plaintext", func(context aero.Context) error {
+		return context.String(HelloWorldString)
 	})
 
 	app.Run()

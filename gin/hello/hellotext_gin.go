@@ -1,4 +1,4 @@
-package hello
+package main
 
 import (
 	"github.com/gin-gonic/gin"
@@ -6,7 +6,7 @@ import (
 
 const (
 	HelloWorldString = "Hello from Golang API TEST\n"
-	adr              = "localhost:8080"
+	adr              = ":8080"
 )
 
 func main() {
