@@ -13,3 +13,4 @@
 
 # jetbrains IDE folder
 .idea
+/bin/simple_go_server*
